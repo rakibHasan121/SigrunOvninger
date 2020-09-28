@@ -7,6 +7,6 @@ package Inlämningsuppgift_1;
  * Copyright: MIT
  */
 interface IPortioner {
-     double räknaPortioner();
+   public double räknaPortioner();
 }
 

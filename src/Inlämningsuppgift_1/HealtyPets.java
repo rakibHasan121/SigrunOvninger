@@ -23,6 +23,7 @@ public class HealtyPets {
             JOptionPane.showMessageDialog(null, "Uttrycket får inte vara tomt","Healthy Pets",JOptionPane.PLAIN_MESSAGE);
             System.exit(0);
         }
+
         switch (input.toLowerCase()) {
             case "sixten" -> JOptionPane.showMessageDialog(null, "Hunden Sixten ska få " + String.format("%.1f", Sixten.räknaPortioner()) + " gm av " + Sixten.djurenMatTyp(),"Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             case "dogge" -> JOptionPane.showMessageDialog(null, "Hunden Dogge ska få " + String.format("%.1f", Dogge.räknaPortioner()) + " gm av " + Dogge.djurenMatTyp(),"Healthy Pets", JOptionPane.PLAIN_MESSAGE);

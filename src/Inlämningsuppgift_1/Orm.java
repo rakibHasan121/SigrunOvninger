@@ -7,8 +7,9 @@ package Inlämningsuppgift_1;
  * Copyright: MIT
  */
 public class Orm extends Djur implements IPortioner {
-    public Orm(double vikt) {
-        super(vikt);
+
+    public Orm(String djurNamn, double vikt) {
+        super(djurNamn, vikt);
     }
 
     @Override

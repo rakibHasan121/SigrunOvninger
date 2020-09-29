@@ -11,6 +11,7 @@ package Inlämningsuppgift_1;
 public abstract class Djur {
 
     protected double vikt;//Djuren vikt (i gram)
+    protected String djurNamn;
 
     /* En abstract method som ska hämta vilken sorts mat ska få särskilda djuren
     från en uppräkningstyp */
@@ -20,6 +21,12 @@ public abstract class Djur {
         HUNDFODER,
         KATTFODER,
         ORMPELLETS
+    }
+
+
+    public Djur(String djurNamn, double vikt) {
+        this.vikt = vikt;
+        this.djurNamn = djurNamn;
     }
 
     public Djur(double vikt) {

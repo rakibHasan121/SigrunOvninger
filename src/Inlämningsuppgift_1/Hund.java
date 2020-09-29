@@ -7,8 +7,9 @@ package Inlämningsuppgift_1;
  * Copyright: MIT
  */
 public class Hund extends Djur implements IPortioner {
-    public Hund(double vikt) {
-        super(vikt);
+
+    public Hund(String djurNamn, double vikt) {
+        super(djurNamn, vikt);
     }
 
     @Override

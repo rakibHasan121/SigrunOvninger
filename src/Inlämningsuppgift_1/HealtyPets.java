@@ -1,6 +1,8 @@
 package Inlämningsuppgift_1;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by rakib
@@ -10,11 +12,17 @@ import javax.swing.*;
  */
 public class HealtyPets {
     public HealtyPets() {
-        Hund Sixten = new Hund(5000);
-        Hund Dogge = new Hund(10_000);
-        Katt Venus = new Katt(5000);
-        Katt Ove = new Katt(3000);
-        Orm Hypno = new Orm(1000);
+        List<Katt> katt = new ArrayList<>();
+        katt.add(0, new Katt("Venus",5000));
+        katt.add(1, new Katt("Ove", 3000));
+
+        List<Hund> hund = new ArrayList<>();
+        hund.add(0, new Hund("Sixten", 5000));
+        hund.add(1, new Hund("Dogge", 10_000));
+
+        List<Orm> orm = new ArrayList<>();
+        orm.add(0, new Orm("Hypno", 1000));
+
 
         String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
         if (input == null || input.isEmpty()) {
@@ -23,11 +31,11 @@ public class HealtyPets {
         }
 
         switch (input.toLowerCase()) {
-            case "sixten" -> JOptionPane.showMessageDialog(null, "Hunden Sixten ska få " + String.format("%.1f", Sixten.räknaPortioner()) + " gm av " + Sixten.djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
-            case "dogge" -> JOptionPane.showMessageDialog(null, "Hunden Dogge ska få " + String.format("%.1f", Dogge.räknaPortioner()) + " gm av " + Dogge.djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
-            case "venus" -> JOptionPane.showMessageDialog(null, "Katten Venus ska få " + String.format("%.1f", Venus.räknaPortioner()) + " gm av " + Venus.djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
-            case "ove" -> JOptionPane.showMessageDialog(null, "Katten Ove ska få " + String.format("%.1f", Ove.räknaPortioner()) + " gm av " + Ove.djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
-            case "hypno" -> JOptionPane.showMessageDialog(null, "Ormen Hypno ska få " + String.format("%.1f", Hypno.räknaPortioner()) + " gm av " + Hypno.djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
+            case "sixten" -> JOptionPane.showMessageDialog(null, "Hunden Sixten ska få " + String.format("%.1f", hund.get(0).räknaPortioner()) + " gm av " + hund.get(0).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
+            case "dogge" -> JOptionPane.showMessageDialog(null, "Hunden Dogge ska få " + String.format("%.1f", hund.get(1).räknaPortioner()) + " gm av " + hund.get(1).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
+            case "venus" -> JOptionPane.showMessageDialog(null, "Katten Venus ska få " + String.format("%.1f", katt.get(0).räknaPortioner()) + " gm av " + katt.get(0).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
+            case "ove" -> JOptionPane.showMessageDialog(null, "Katten Ove ska få " + String.format("%.1f", katt.get(1).räknaPortioner()) + " gm av " + katt.get(1).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
+            case "hypno" -> JOptionPane.showMessageDialog(null, "Ormen Hypno ska få " + String.format("%.1f", orm.get(0).räknaPortioner()) + " gm av " + orm.get(0).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             default -> JOptionPane.showMessageDialog(null, "Matat in felaktiga värden", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
         }
     }

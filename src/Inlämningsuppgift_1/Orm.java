@@ -13,7 +13,7 @@ public class Orm extends Djur implements IPortioner {
 
     @Override
     public matTyp djurenMatTyp() {
-        return matTyp.ormpellets;
+        return matTyp.ORMPELLETS;
     }
 
     @Override

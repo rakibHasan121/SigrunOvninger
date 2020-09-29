@@ -13,9 +13,9 @@ public abstract class Djur {
     public abstract matTyp djurenMatTyp();
 
     enum matTyp {
-        hundfoder,
-        kattfoder,
-        ormpellets
+        HUNDFODER,
+        KATTFODER,
+        ORMPELLETS
     }
 
     public Djur(double vikt) {

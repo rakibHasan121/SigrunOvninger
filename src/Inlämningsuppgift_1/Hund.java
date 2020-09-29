@@ -18,6 +18,6 @@ public class Hund extends Djur implements IPortioner {
 
     @Override
     public matTyp djurenMatTyp() {
-        return matTyp.hundfoder;
+        return matTyp.HUNDFODER;
     }
 }

@@ -6,13 +6,15 @@ package Inlämningsuppgift_1;
  * Time: 07:56
  * Copyright: MIT
  */
+
+
 public abstract class Djur {
 
     protected double vikt;//Djuren vikt (i gram)
 
-    public abstract matTyp djurenMatTyp();
+    public abstract MatTyp djurenMatTyp();
 
-    enum matTyp {
+    enum MatTyp {
         HUNDFODER,
         KATTFODER,
         ORMPELLETS

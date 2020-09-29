@@ -17,7 +17,7 @@ public class Katt extends Djur implements IPortioner {
     }
 
     @Override
-    public matTyp djurenMatTyp() {
-        return matTyp.KATTFODER;
+    public MatTyp djurenMatTyp() {
+        return MatTyp.KATTFODER;
     }
 }

@@ -6,6 +6,7 @@ package Inlämningsuppgift_1;
  * Time: 07:56
  * Copyright: MIT
  */
+
 interface IPortioner {
    public double räknaPortioner();
 }

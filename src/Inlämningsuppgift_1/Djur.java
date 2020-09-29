@@ -12,6 +12,8 @@ public abstract class Djur {
 
     protected double vikt;//Djuren vikt (i gram)
 
+    /* En abstract method som ska hämta vilken sorts mat för särskilda djuren
+    från en uppräkningstyp */
     public abstract MatTyp djurenMatTyp();
 
     enum MatTyp {

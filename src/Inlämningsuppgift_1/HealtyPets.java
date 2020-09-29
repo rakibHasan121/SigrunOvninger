@@ -12,16 +12,18 @@ import java.util.List;
  */
 public class HealtyPets {
     public HealtyPets() {
+
+
         List<Katt> katt = new ArrayList<>();
-        katt.add(0, new Katt("Venus",5000));
-        katt.add(1, new Katt("Ove", 3000));
+        katt.add(0, new Katt("Venus",5_000));
+        katt.add(1, new Katt("Ove", 3_000));
 
         List<Hund> hund = new ArrayList<>();
-        hund.add(0, new Hund("Sixten", 5000));
+        hund.add(0, new Hund("Sixten", 5_000));
         hund.add(1, new Hund("Dogge", 10_000));
 
         List<Orm> orm = new ArrayList<>();
-        orm.add(0, new Orm("Hypno", 1000));
+        orm.add(0, new Orm("Hypno", 1_000));
 
 
         String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);

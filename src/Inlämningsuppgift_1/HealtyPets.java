@@ -32,7 +32,7 @@ public class HealtyPets {
             System.exit(0);
         }
 
-        switch (input.toLowerCase()) {
+        switch (input.toLowerCase().trim()) {
             case "sixten" -> JOptionPane.showMessageDialog(null, "Hunden Sixten ska få " + String.format("%.1f", hund.get(0).räknaPortioner()) + " gm av " + hund.get(0).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             case "dogge" -> JOptionPane.showMessageDialog(null, "Hunden Dogge ska få " + String.format("%.1f", hund.get(1).räknaPortioner()) + " gm av " + hund.get(1).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             case "venus" -> JOptionPane.showMessageDialog(null, "Katten Venus ska få " + String.format("%.1f", katt.get(0).räknaPortioner()) + " gm av " + katt.get(0).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);

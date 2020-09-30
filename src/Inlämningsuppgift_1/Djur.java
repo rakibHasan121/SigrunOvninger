@@ -29,10 +29,6 @@ public abstract class Djur {
         this.djurNamn = djurNamn;
     }
 
-    public Djur(double vikt) {
-        this.vikt = vikt;
-    }
-
     public double getVikt() {
         return vikt;
     }

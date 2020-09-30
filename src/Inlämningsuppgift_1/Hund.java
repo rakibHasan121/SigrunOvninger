@@ -12,9 +12,9 @@ public class Hund extends Djur implements IPortioner {
         super(djurNamn, vikt);
     }
 
-    @Override
+    @Override//Implementering interface metod
     public double räknaPortioner() {
-        return getVikt() / 100;
+        return getVikt() / 100;//Enligt dietcoach formler av varje portion foder för en Hund
     }
 
     @Override

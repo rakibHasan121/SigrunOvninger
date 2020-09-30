@@ -19,6 +19,6 @@ public class Orm extends Djur implements IPortioner {
 
     @Override
     public double räknaPortioner() {
-        return 20;
+        return 20;//Enligt dietcoach formler av varje portion foder för en Orm
     }
 }

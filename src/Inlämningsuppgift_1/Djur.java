@@ -13,17 +13,18 @@ public abstract class Djur {
     protected double vikt;//Djuren vikt (i gram)
     protected String djurNamn;
 
-    /* En abstract method som ska hämta vilken sorts mat ska få särskilda djuren
-    från en uppräkningstyp */
+    /* En abstract method som ska returera en värde från en enum,
+    pekar till vilken sorts mat ska få en särskilda djur */
     public abstract MatTyp djurenMatTyp();
 
+    //Lagrade olika typ djuren mat i en enum
     enum MatTyp {
         HUNDFODER,
         KATTFODER,
         ORMPELLETS
     }
 
-
+    //Djur constructor
     public Djur(String djurNamn, double vikt) {
         this.vikt = vikt;
         this.djurNamn = djurNamn;

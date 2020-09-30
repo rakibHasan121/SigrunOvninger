@@ -8,6 +8,6 @@ package Inlämningsuppgift_1;
  */
 
 interface IPortioner {
-   public double räknaPortioner();
+   double räknaPortioner();
 }
 

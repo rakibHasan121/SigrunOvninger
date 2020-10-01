@@ -24,6 +24,9 @@ public abstract class Djur {
         ORMPELLETS
     }
 
+    public Djur() {
+    }
+
     //Djur constructor
     public Djur(String djurNamn, double vikt) {
         this.vikt = vikt;

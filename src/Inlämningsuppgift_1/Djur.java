@@ -9,7 +9,7 @@ package Inlämningsuppgift_1;
 
 
 public abstract class Djur {
-
+    //Instansvariabler och inkapsling av instansvariabler
     protected double vikt;//Djuren vikt (i gram)
     protected String djurNamn;
 

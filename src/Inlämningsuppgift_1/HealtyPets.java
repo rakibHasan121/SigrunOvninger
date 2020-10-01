@@ -13,9 +13,9 @@ import java.util.List;
 public class HealtyPets {
     public HealtyPets() {
 
-
+        /*Här lagrar djuren till listor så i framtiden man kan lagra ny djuren*/
         List<Katt> katt = new ArrayList<>();
-        katt.add(0, new Katt("Venus",5_000));
+        katt.add(0, new Katt("Venus", 5_000));
         katt.add(1, new Katt("Ove", 3_000));
 
         List<Hund> hund = new ArrayList<>();
@@ -26,7 +26,7 @@ public class HealtyPets {
         orm.add(0, new Orm("Hypno", 1_000));
 
 
-        String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
+        String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?", "Healthy Pets", JOptionPane.QUESTION_MESSAGE);
         if (input == null || input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Uttrycket får inte vara tomt", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             System.exit(0);

@@ -26,7 +26,7 @@ public class HealtyPets {
         orm.add(0, new Orm("Hypno", 1_000));
 
 
-        String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?", "Healthy Pets", JOptionPane.QUESTION_MESSAGE);
+        String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
         if (input == null || input.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Uttrycket får inte vara tomt", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             System.exit(0);

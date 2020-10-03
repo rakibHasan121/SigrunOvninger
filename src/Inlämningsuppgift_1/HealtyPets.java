@@ -70,7 +70,6 @@ public class HealtyPets {
             JOptionPane.showMessageDialog(null, "Matat in felaktiga värden");
     }
 
-
     public static void main(String[] args) {
         HealtyPets hp = new HealtyPets();
     }

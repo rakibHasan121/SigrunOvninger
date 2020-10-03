@@ -13,7 +13,8 @@ import java.util.List;
 public class HealtyPets {
     public HealtyPets() {
         /*
-        //This is how i've done
+        //Det hur jag gjort
+
         //Här lagrar djuren till listor så i framtiden man kan lagra ny djuren
         List<Katt> katt = new ArrayList<>();
         katt.add(0, new Katt("Venus", 5_000));
@@ -44,6 +45,7 @@ public class HealtyPets {
         */
 
         //After Sigrun's recommendation
+
         List<Djur> djurList = new ArrayList<>();
         djurList.add(new Hund("Sixten", 5_000));
         djurList.add(new Hund("Dogge", 10_000));

@@ -12,8 +12,9 @@ import java.util.List;
  */
 public class HealtyPets {
     public HealtyPets() {
-
-        /*Här lagrar djuren till listor så i framtiden man kan lagra ny djuren*/
+        /*
+        //This is how i've done
+        //Här lagrar djuren till listor så i framtiden man kan lagra ny djuren
         List<Katt> katt = new ArrayList<>();
         katt.add(0, new Katt("Venus", 5_000));
         katt.add(1, new Katt("Ove", 3_000));
@@ -40,7 +41,33 @@ public class HealtyPets {
             case "hypno" -> JOptionPane.showMessageDialog(null, "Ormen Hypno ska få " + String.format("%.1f", orm.get(0).räknaPortioner()) + " gm av " + orm.get(0).djurenMatTyp(), "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
             default -> JOptionPane.showMessageDialog(null, "Matat in felaktiga värden", "Healthy Pets", JOptionPane.PLAIN_MESSAGE);
         }
+        */
+
+        //After Sigrun's recommendation
+        List<Djur> djurList = new ArrayList<>();
+        djurList.add(new Hund("Sixten", 5_000));
+        djurList.add(new Hund("Dogge", 10_000));
+        djurList.add(new Katt("Venus", 5_000));
+        djurList.add(new Katt("Ove", 3_000));
+        djurList.add(new Orm("Hypno", 1_000));
+
+        String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?");
+        if (input == null || input.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Uttrycket får inte vara tomt");
+            System.exit(0);
+        }
+        boolean isFound = false;
+        for (Djur djur : djurList) {
+            if (djur.getDjurNamn().equalsIgnoreCase(input.trim())) {
+                JOptionPane.showMessageDialog(null, djur.getDjurNamn() + " ska få " + String.format("%.1f", djur.räknaPortioner()) + " gm av " + djur.djurenMatTyp().toString().toLowerCase());
+                isFound = true;
+                break;
+            }
+        }
+        if (!isFound)
+            JOptionPane.showMessageDialog(null, "Matat in felaktiga värden");
     }
+
 
     public static void main(String[] args) {
         HealtyPets hp = new HealtyPets();

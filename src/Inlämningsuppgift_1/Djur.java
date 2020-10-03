@@ -8,7 +8,7 @@ package Inlämningsuppgift_1;
  */
 
 
-public abstract class Djur {
+public abstract class Djur implements IPortioner {
     //Instansvariabler och inkapsling av instansvariabler
     protected double vikt;//Djuren vikt (i gram)
     protected String djurNamn;
@@ -24,13 +24,19 @@ public abstract class Djur {
         ORMPELLETS
     }
 
-    public Djur() {
-    }
-
     //Djur constructor
     public Djur(String djurNamn, double vikt) {
         this.vikt = vikt;
         this.djurNamn = djurNamn;
+    }
+
+    @Override
+    public double räknaPortioner() {
+        return 0;
+    }
+
+    public String getDjurNamn() {
+        return djurNamn;
     }
 
     public double getVikt() {

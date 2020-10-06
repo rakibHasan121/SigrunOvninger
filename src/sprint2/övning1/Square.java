@@ -11,9 +11,9 @@ public class Square implements IFigure {
     protected int length;
     protected int width;
 
-    public Square(int length, int width) {
-        this.length = length;
-        this.width = width;
+    public Square(int l, int w) {
+        this.length = l;
+        this.width = w;
     }
 
     public int getLength() {

@@ -1,7 +1,6 @@
 package sprint2.övning1;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class SquareTest {
@@ -31,6 +30,9 @@ class SquareTest {
     @Test
     public final void testCircumference() {
         assertEquals(s1.getirCumference(), 18);
+        assertNotEquals(s1.getirCumference(),85);
         assertTrue(s1.getirCumference()== 18);
+        assertFalse(s1.getirCumference()==15);
     }
+
 }

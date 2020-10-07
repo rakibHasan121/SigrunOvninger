@@ -13,6 +13,7 @@ public class CarCalculator {
     public double calculateAverageGasUsage(){
         return bensinFörbrukatsUnderÅret / calculateDistanceDrivenDuringLastYear();
     }
+
     public void run(){
         mätarställningNu= Double.parseDouble(JOptionPane.showInputDialog(null,"Ange mätarställning: ").trim());
         mätarställningFörraÅret= Double.parseDouble(JOptionPane.showInputDialog(null,"Ange mätarställning förra året: ").trim());

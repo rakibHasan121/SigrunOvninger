@@ -3,28 +3,49 @@ package sprint2.övning2;
 import javax.swing.*;
 
 public class CarCalculator {
-    protected double mätarställningNu;
-    protected double mätarställningFörraÅret;
-    protected double bensinFörbrukatsUnderÅret;
 
-    public double calculateDistanceDrivenDuringLastYear() {
+    public double calculateDistanceDrivenDuringLastYear(
+            double mätarställningNu, double mätarställningFörraÅret){
         return mätarställningNu - mätarställningFörraÅret;
     }
-    public double calculateAverageGasUsage(){
-        return bensinFörbrukatsUnderÅret / calculateDistanceDrivenDuringLastYear();
+
+    public double calculateAverageGasUsage(
+            double gasUsedLastYear, double distanceDrivenLastYear){
+        return gasUsedLastYear / distanceDrivenLastYear;
     }
 
-    public void run(){
-        mätarställningNu= Double.parseDouble(JOptionPane.showInputDialog(null,"Ange mätarställning: ").trim());
-        mätarställningFörraÅret= Double.parseDouble(JOptionPane.showInputDialog(null,"Ange mätarställning förra året: ").trim());
-        bensinFörbrukatsUnderÅret = Double.parseDouble(JOptionPane.showInputDialog("Ange bensinförbrukning under året: ").trim());
-        System.out.println("Antal körda mil: "+calculateDistanceDrivenDuringLastYear());
-        System.out.println("Antal liter bensin: "+bensinFörbrukatsUnderÅret);
-        System.out.println("Förbrukning per mil: "+ calculateAverageGasUsage());
+    public String printDistanceDrivenDuringLastYear(double distanceDrivenDuringLastYear){
+        return "Antal körda mil: " + distanceDrivenDuringLastYear;
     }
 
-    public static void main(String[] args) {
+    public String printGasUsedLastYear(double gasUsedLastYear){
+        return "Antal liter bensin: " + gasUsedLastYear;
+    }
+
+    public String printAverageGasUsage(double averageGasUsage){
+        return "Förbrukning per mil: " + averageGasUsage;
+    }
+
+    public void mainProgram(){
+        double mätarställningNu = Double.parseDouble(
+                JOptionPane.showInputDialog("Ange mätarställning: ").trim());
+        double mätarställningFörEttÅrSen = Double.parseDouble(
+                JOptionPane.showInputDialog("Ange mätarställning för ett år sen: ").trim());
+        double gasUsedLastYear = Double.parseDouble(
+                JOptionPane.showInputDialog("Ange bensinförbrukning under året: ").trim());
+
+        double distanceDrivenDuringLastYear = calculateDistanceDrivenDuringLastYear(mätarställningNu, mätarställningFörEttÅrSen);
+        double averageGasUsage = calculateAverageGasUsage(distanceDrivenDuringLastYear, gasUsedLastYear);
+
+        System.out.println(printDistanceDrivenDuringLastYear(distanceDrivenDuringLastYear));
+        System.out.println(printGasUsedLastYear(gasUsedLastYear));
+        System.out.println(printAverageGasUsage(averageGasUsage));
+    }
+
+    public static void main(String [] args){
+
         CarCalculator cc = new CarCalculator();
-        cc.run();
+        cc.mainProgram();
     }
+
 }

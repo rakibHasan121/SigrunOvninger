@@ -1,4 +1,4 @@
-package Inlämningsuppgift.Inlämningsuppgift_1;
+package Inlämningsuppgift_1;
 
 import javax.swing.*;
 import java.util.ArrayList;

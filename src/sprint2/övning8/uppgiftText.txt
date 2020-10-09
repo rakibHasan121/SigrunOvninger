@@ -1,0 +1,9 @@
+Uppgift 8a – Inläsning från fil, formattering av text
+Ladda ner filen temp.txt från Nackademins portal, den innehåller temperaturer som mätts upp kl 13 på
+en plats under en månad. Lägg filen i den katalog där du skriver ditt program.
+Skriv ett program som läser filen och skriver ut högsta och lägsta värden, samt beräknar
+medeltemperaturen för månaden.
+Använd dig av klassen FileReader wrappad i en BufferedReader för att läsa från filen.
+
+Uppgift 8b – Inläsning från fil, formattering av text
+Kopiera uppgift 5a. Modifiera koden så att du använder dig av Scanner för att läsa från filen.

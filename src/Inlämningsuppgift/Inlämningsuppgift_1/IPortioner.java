@@ -1,4 +1,4 @@
-package Inlämningsuppgift_1;
+package Inlämningsuppgift.Inlämningsuppgift_1;
 
 /**
  * Created by rakib

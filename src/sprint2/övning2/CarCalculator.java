@@ -14,6 +14,7 @@ public class CarCalculator {
         return gasUsedLastYear / distanceDrivenLastYear;
     }
 
+
     public String printDistanceDrivenDuringLastYear(double distanceDrivenDuringLastYear){
         return "Antal körda mil: " + distanceDrivenDuringLastYear;
     }

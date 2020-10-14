@@ -1,6 +1,8 @@
 package Inlämningsuppgift.Inlämningsuppgift_2;
 
 
+import java.io.IOException;
+
 /**
  * Created by rakib
  * Date: 2020-10-12
@@ -9,4 +11,8 @@ package Inlämningsuppgift.Inlämningsuppgift_2;
  * Copyright: MIT
  */
 public class BestGymEver {
+    public static void main(String[] args) throws IOException{
+        GymMedlemskap gm = new GymMedlemskap();
+        gm.run();
+    }
 }

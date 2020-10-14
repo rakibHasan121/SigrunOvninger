@@ -13,16 +13,18 @@ import java.time.Period;
  */
 public class Medlemmar {
     protected String personNummer;
-    protected String kundNamn;
+    protected String kundFörnamn;
+    protected String kundEfternamn;
     protected LocalDate senastBetaldeÅrsavgiften;
 
-    public Medlemmar(String personNummer, String kundNamn, LocalDate senastBetaldeÅrsavgiften) {
+    public Medlemmar(String personNummer, String kundFörnamn, String kundEfternamn, LocalDate senastBetaldeÅrsavgiften) {
         this.personNummer = personNummer;
-        this.kundNamn = kundNamn;
+        this.kundFörnamn = kundFörnamn;
+        this.kundEfternamn = kundEfternamn;
         this.senastBetaldeÅrsavgiften = senastBetaldeÅrsavgiften;
     }
 
-    public long medlemskapGiltigheten() {
+    public long senasteBetalningIDags() {
         LocalDate nuTid = LocalDate.now();
         LocalDate dåTid = senastBetaldeÅrsavgiften;
         Duration skillnad = Duration.between(dåTid.atStartOfDay(), nuTid.atStartOfDay());
@@ -34,10 +36,11 @@ public class Medlemmar {
     }
 
     public String getKundNamn() {
-        return kundNamn;
+        return kundFörnamn.concat(" ").concat(kundEfternamn);
     }
 
     public LocalDate getSenastBetaldeÅrsavgiften() {
         return senastBetaldeÅrsavgiften;
     }
+
 }

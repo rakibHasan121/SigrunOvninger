@@ -1,8 +1,8 @@
 package Inlämningsuppgift.Inlämningsuppgift_2;
 
-import java.time.Duration;
 import java.time.LocalDate;
-import java.time.Period;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Created by rakib
@@ -11,36 +11,65 @@ import java.time.Period;
  * Projekt: SigrunOvninger
  * Copyright: MIT
  */
+
 public class Medlemmar {
-    protected String personNummer;
-    protected String kundFörnamn;
-    protected String kundEfternamn;
-    protected LocalDate senastBetaldeÅrsavgiften;
+    private String personNr;//Kunden's personnummer
+    private String kundNamn;//Kunden's fullständiga namn
+    private LocalDate senasteBetalning;//Kunden's senast betalade årsavgiften till gymmet
 
-    public Medlemmar(String personNummer, String kundFörnamn, String kundEfternamn, LocalDate senastBetaldeÅrsavgiften) {
-        this.personNummer = personNummer;
-        this.kundFörnamn = kundFörnamn;
-        this.kundEfternamn = kundEfternamn;
-        this.senastBetaldeÅrsavgiften = senastBetaldeÅrsavgiften;
+    public Medlemmar() {
     }
 
-    public long senasteBetalningIDags() {
-        LocalDate nuTid = LocalDate.now();
-        LocalDate dåTid = senastBetaldeÅrsavgiften;
-        Duration skillnad = Duration.between(dåTid.atStartOfDay(), nuTid.atStartOfDay());
-        return skillnad.toDays();
+    public Medlemmar(String personNr, String kundNamn, LocalDate senastBetalning) {
+        this.personNr = personNr;
+        this.kundNamn = kundNamn;
+        this.senasteBetalning = senastBetalning;
     }
 
-    public String getPersonNummer() {
-        return personNummer;
+    public void setPersonNr(String personNr) {
+        this.personNr = personNr;
+    }
+
+    public void setKundNamn(String kundNamn) {
+        this.kundNamn = kundNamn;
+    }
+
+    public void setSenasteBetalning(LocalDate senasteBetalning) {
+        this.senasteBetalning = senasteBetalning;
+    }
+
+    public String getPersonNr() {
+        return personNr;
     }
 
     public String getKundNamn() {
-        return kundFörnamn.concat(" ").concat(kundEfternamn);
+        return kundNamn;
     }
 
-    public LocalDate getSenastBetaldeÅrsavgiften() {
-        return senastBetaldeÅrsavgiften;
+    public LocalDate getSenasteBetalning() {
+        return senasteBetalning;
     }
 
+    public String personNrFormat() {
+        return personNr.substring(0, 6) + "-" + personNr.substring(6, 10);
+    }
+
+    /**
+     * Methoden sparar tid och detum när en betalande kund loggar in till gymmet
+     * @return Kunden's namn, personnummer och besökte tid
+     */
+    public String skrivAllaMedlemmerInfo() {
+        String kund = String.format("Namn: %s Personnummer: %s Besökte: %s",getKundNamn(),getPersonNr(),LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+
+        return kund;
+    }
+
+    /**
+     * Methoden sparar hur ofta betalande klienterna tränar för personlige tränaren
+     * @return Datum och tid när en betalde kund registrera sig vid inloggning
+     */
+    public String skrivMedlemInfoFörPT() {
+        String kundPT = String.format("%s  %s", LocalDate.now(), LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        return kundPT;
+    }
 }

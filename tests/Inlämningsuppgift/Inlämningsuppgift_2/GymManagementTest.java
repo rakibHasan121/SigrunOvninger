@@ -35,7 +35,7 @@ class GymManagementTest {
 
     @Test
     void newCustomerVisitTest() throws IOException {
-        /*Tester om kan skap nya kunder och ha åtkomst till deras attribut*/
+        /*Tester om kan skapa nya kunder och ha åtkomst till deras attribut*/
         Path logPath = Paths.get("src/Inlämningsuppgift/Inlämningsuppgift_2/allaFiler/"+ LocalDate.now()+"TEST.txt");//Ny testfil
         BufferedWriter br = new BufferedWriter(new FileWriter(String.valueOf(logPath), true));
         List<Medlemmar> medlemmarList = new ArrayList<>();

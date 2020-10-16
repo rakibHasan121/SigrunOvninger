@@ -59,9 +59,7 @@ public class Medlemmar {
      * @return Kunden's namn, personnummer och besökte tid
      */
     public String skrivAllaMedlemmerInfo() {
-        String kund = String.format("Namn: %s Personnummer: %s Besökte: %s",getKundNamn(),personNrFormat(),LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-
-        return kund;
+        return String.format("Namn: %s Personnummer: %s Besökte: %s",getKundNamn(),personNrFormat(),LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
 
     /**
@@ -69,7 +67,6 @@ public class Medlemmar {
      * @return Datum och tid när en betalde kund registrera sig vid inloggning
      */
     public String skrivMedlemInfoFörPT() {
-        String kundPT = String.format("%s  %s", LocalDate.now(), LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        return kundPT;
+        return String.format("%s  %s", LocalDate.now(), LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
 }

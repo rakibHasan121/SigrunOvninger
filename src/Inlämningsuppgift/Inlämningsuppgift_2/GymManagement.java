@@ -39,6 +39,7 @@ public class GymManagement {
                 String betaltDatum = läsFil.nextLine();
                 medlemmar.setSenasteBetalning(LocalDate.parse(betaltDatum));
                 medlemmarList.add(medlemmar);
+                br.close();
             }
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Inläsning fel\n" + e.getMessage());

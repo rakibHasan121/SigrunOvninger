@@ -49,11 +49,13 @@ class GymManagementTest {
 
         GymManagement.skrivLog(m1, logPath);//Här provar inloggning för en ny kund
         GymManagement.skrivLog(m2, logPath);
+        GymManagement.skrivLog(m3, logPath);
 
         assertNotNull(medlemmarList);
+        //Testar om alla nya kunderna betalades för mindre än ett år sedan
         for (Medlemmar medlemmar : medlemmarList) {
             assertTrue(medlemmar.getSenasteBetalning().isAfter(LocalDate.now().minusYears(1)));
-        }//Testar om alla nya kunderna betalades för mindre än ett år sedan
+        }
     }
 
 }

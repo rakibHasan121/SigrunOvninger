@@ -45,6 +45,7 @@ class GymManagementTest {
         medlemmarList.add(m1);
         medlemmarList.add(m2);
         medlemmarList.add(m3);
+        br.close();
 
         GymManagement.skrivLog(m1, logPath);//Här provar inloggning för en ny kund
         GymManagement.skrivLog(m2, logPath);

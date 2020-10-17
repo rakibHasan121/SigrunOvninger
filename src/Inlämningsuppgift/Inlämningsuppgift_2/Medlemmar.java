@@ -20,7 +20,7 @@ public class Medlemmar {
     public Medlemmar() {
     }
 
-    public Medlemmar(String personNr, String kundNamn, LocalDate senastBetalning) {
+    public Medlemmar(String kundNamn, String personNr, LocalDate senastBetalning) {
         this.personNr = personNr;
         this.kundNamn = kundNamn;
         this.senasteBetalning = senastBetalning;
@@ -59,7 +59,7 @@ public class Medlemmar {
      * @return Kunden's namn, personnummer och besökte tid
      */
     public String skrivAllaMedlemmerInfo() {
-        return String.format("Namn: %s Personnummer: %s Besökte: %s",getKundNamn(),getPersonNr(),LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        return String.format("Namn: %s Personnummer: %s Besökte: %s",getKundNamn(),personNrFormat(),LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
 
     /**

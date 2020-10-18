@@ -10,7 +10,7 @@ import java.io.IOException;
  * Copyright: MIT
  */
 public class BestGymEver {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         while (true) GymManagement.run();
     }
 }

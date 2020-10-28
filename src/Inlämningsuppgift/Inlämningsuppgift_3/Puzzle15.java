@@ -15,10 +15,12 @@ import java.util.Random;
  */
 public class Puzzle15 extends JFrame implements ActionListener {
     private final JPanel northButtons = new JPanel();
+    private final JPanel southButtons = new JPanel();
     private final JPanel tileButtons = new JPanel();
 
     private final JButton newGame = new JButton("Nytt Spel");
     private final JButton cheat = new JButton("CheatCode");
+    private final JButton exit = new JButton("Avsluta");
 
     private final int size = 4;
     private final JButton[][] tilesBoard = new JButton[size][size];
@@ -52,13 +54,16 @@ public class Puzzle15 extends JFrame implements ActionListener {
         tilesBoard[size - 1][size - 1] = dummyButton;
         dummyButton.addActionListener(this);
         tileButtons.add(dummyButton);
+        southButtons.add(cheat);
+        southButtons.add(exit);
         newGame.addActionListener(this);
         cheat.addActionListener(this);
+        exit.addActionListener(this);
         tileButtons.setLayout(new GridLayout(size, size));
         northButtons.setLayout(new BorderLayout());
         add(newGame, BorderLayout.NORTH);
         add(tileButtons, BorderLayout.CENTER);
-        add(cheat, BorderLayout.SOUTH);
+        add(southButtons, BorderLayout.SOUTH);
         mixTiles(tilesBoard);
         revalidate();
     }
@@ -148,7 +153,11 @@ public class Puzzle15 extends JFrame implements ActionListener {
                 mixTiles(tilesBoard);
             else
                 System.exit(0);
+        if (e.getSource() == exit) {
+            System.exit(0);
+        }
     }
+
 
     public static void main(String[] args) {
 

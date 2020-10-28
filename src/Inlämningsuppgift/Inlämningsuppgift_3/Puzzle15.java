@@ -22,7 +22,6 @@ public class Puzzle15 extends JFrame implements ActionListener {
     private final JButton cheat = new JButton("CheatCode");
     private final JButton exit = new JButton("Avsluta");
 
-
     private final String x = JOptionPane.showInputDialog("How many rows will you have in the game!");
     private final String y = JOptionPane.showInputDialog("How many columns will you have in the game!");
     private final int sizeX = Integer.parseInt(x);
@@ -38,7 +37,6 @@ public class Puzzle15 extends JFrame implements ActionListener {
         this.setVisible(true);
         initComponent();
     }
-
 
     private void initComponent() {
         int maxBrickor = (sizeX * sizeY) - 1;
@@ -164,7 +162,6 @@ public class Puzzle15 extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-
         new Puzzle15();
     }
 }

@@ -22,8 +22,8 @@ public class Puzzle15 extends JFrame implements ActionListener {
     private final JButton cheat = new JButton("CheatCode");
     private final JButton exit = new JButton("Avsluta");
 
-    private final String x = JOptionPane.showInputDialog("How many rows will you have in the game!");
-    private final String y = JOptionPane.showInputDialog("How many columns will you have in the game!");
+    private final String x = JOptionPane.showInputDialog("Number of rows");
+    private final String y = JOptionPane.showInputDialog("Number of columns");
     private final int sizeX = Integer.parseInt(x);
     private final int sizeY = Integer.parseInt(y);
     private final JButton[][] tilesBoard = new JButton[sizeX][sizeY];

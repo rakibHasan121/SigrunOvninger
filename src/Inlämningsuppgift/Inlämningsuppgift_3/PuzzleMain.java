@@ -9,6 +9,8 @@ package Inlämningsuppgift.Inlämningsuppgift_3;
  */
 public class PuzzleMain {
     public static void main(String[] args) {
-            new Puzzle15();
+        Puzzle15 game = new Puzzle15();
+        game.run();
+
     }
 }

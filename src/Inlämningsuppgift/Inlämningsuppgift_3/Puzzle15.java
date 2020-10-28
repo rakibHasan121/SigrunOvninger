@@ -22,13 +22,12 @@ public class Puzzle15 extends JFrame implements ActionListener {
     private final JButton cheat = new JButton("CheatCode");
     private final JButton exit = new JButton("Avsluta");
 
-    private final String x = JOptionPane.showInputDialog("Number of rows");
-    private final String y = JOptionPane.showInputDialog("Number of columns");
-    private final int sizeX = Integer.parseInt(x);
-    private final int sizeY = Integer.parseInt(y);
+    private final int sizeX = Integer.parseInt(JOptionPane.showInputDialog("Number of rows"));//Number of rows from user input
+    private final int sizeY = Integer.parseInt(JOptionPane.showInputDialog("Number of columns"));//Number of columns from user input
+
     private final JButton[][] tilesBoard = new JButton[sizeX][sizeY];
 
-    public Puzzle15() {
+    public void run() {
         this.setTitle("15-spel");
         this.setSize(600, 600);
         setResizable(false);
@@ -37,6 +36,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
         this.setVisible(true);
         initComponent();
     }
+
 
     private void initComponent() {
         int maxBrickor = (sizeX * sizeY) - 1;

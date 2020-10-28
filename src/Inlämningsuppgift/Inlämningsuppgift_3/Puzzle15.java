@@ -160,8 +160,4 @@ public class Puzzle15 extends JFrame implements ActionListener {
             System.exit(0);
         }
     }
-
-    public static void main(String[] args) {
-        new Puzzle15();
-    }
 }

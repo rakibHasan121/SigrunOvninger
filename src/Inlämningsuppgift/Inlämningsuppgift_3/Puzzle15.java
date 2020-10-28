@@ -22,8 +22,12 @@ public class Puzzle15 extends JFrame implements ActionListener {
     private final JButton cheat = new JButton("CheatCode");
     private final JButton exit = new JButton("Avsluta");
 
-    private final int size = 4;
-    private final JButton[][] tilesBoard = new JButton[size][size];
+
+    private final String x = JOptionPane.showInputDialog("How many rows will you have in the game!");
+    private final String y = JOptionPane.showInputDialog("How many columns will you have in the game!");
+    private final int sizeX = Integer.parseInt(x);
+    private final int sizeY = Integer.parseInt(y);
+    private final JButton[][] tilesBoard = new JButton[sizeX][sizeY];
 
     public Puzzle15() {
         this.setTitle("15-spel");
@@ -37,10 +41,10 @@ public class Puzzle15 extends JFrame implements ActionListener {
 
 
     private void initComponent() {
-        int maxBrickor = (size * size) - 1;
+        int maxBrickor = (sizeX * sizeY) - 1;
         int count = 1;//As the text in the tiles starts from 1
-        for (int y = 0; y < size; y++) {
-            for (int x = 0; x < size; x++) {
+        for (int y = 0; y < sizeY; y++) {
+            for (int x = 0; x < sizeX; x++) {
                 if (count > maxBrickor)
                     break;
                 JButton newButton = new JButton(Integer.toString(count));
@@ -52,7 +56,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
         }
 
         JButton dummyButton = new JButton("");//An empty tiles in the last (dummyButton)
-        tilesBoard[size - 1][size - 1] = dummyButton;
+        tilesBoard[sizeX - 1][sizeY - 1] = dummyButton;
         dummyButton.addActionListener(this);
         tileButtons.add(dummyButton);
         southButtons.add(cheat);
@@ -60,7 +64,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
         newGame.addActionListener(this);
         cheat.addActionListener(this);
         exit.addActionListener(this);
-        tileButtons.setLayout(new GridLayout(size, size));
+        tileButtons.setLayout(new GridLayout(sizeX, sizeY));
         northButtons.setLayout(new BorderLayout());
         add(newGame, BorderLayout.NORTH);
         add(tileButtons, BorderLayout.CENTER);
@@ -89,26 +93,26 @@ public class Puzzle15 extends JFrame implements ActionListener {
 
     private void cheatInGame(JButton[][] tilesBoard) {
         int count = 1;
-        for (int y = 0; y < size; y++) {
-            for (int x = 0; x < size; x++) {
+        for (int y = 0; y < sizeY; y++) {
+            for (int x = 0; x < sizeX; x++) {
                 tilesBoard[x][y].setText(count + "");
                 count++;
             }//Reset every tiles text from 1 to 16
         }
-        tilesBoard[size - 1][size - 1].setText("");//Making the last tile a blank tile
-        changeTilesPosition(size - 1, size - 1, size - 2, size - 1);
+        tilesBoard[sizeX - 1][sizeY - 1].setText("");//Making the last tile a blank tile
+        changeTilesPosition(sizeX - 1, sizeY - 1, sizeX - 2, sizeY - 1);
         JOptionPane.showMessageDialog(null, "Cheat code applied. Move just the last button");
 
     }
 
     public boolean onWinning() {
-        for (int y = 0; y < size; y++) {
-            for (int x = 0; x < size; x++) {
+        for (int y = 0; y < sizeY; y++) {
+            for (int x = 0; x < sizeX; x++) {
                 String tilesText = tilesBoard[x][y].getText();
-                int tilesPosition = x + 1 + y * size;
+                int tilesPosition = x + 1 + y * sizeY;
 
                 if (tilesText.equals("")) {
-                    if (tilesPosition != size * size) {//Check if the empty tiles is in the last of the board
+                    if (tilesPosition != sizeX * sizeY) {//Check if the empty tiles is in the last of the board
                         return false;
                     }
                 } else {
@@ -130,19 +134,19 @@ public class Puzzle15 extends JFrame implements ActionListener {
             cheatInGame(tilesBoard);
 
         JButton clickedButton = (JButton) e.getSource();
-        for (int y = 0; y < size; y++) {
-            for (int x = 0; x < size; x++) {
+        for (int y = 0; y < sizeY; y++) {
+            for (int x = 0; x < sizeX; x++) {
                 if (tilesBoard[x][y].equals(clickedButton)) {
                     if (x > 0)//Check left
                         if (tilesBoard[x - 1][y].getText().equals(""))
                             changeTilesPosition(x - 1, y, x, y);
-                    if (x < size - 1)//Check right
+                    if (x < sizeX - 1)//Check right
                         if (tilesBoard[x + 1][y].getText().equals(""))
                             changeTilesPosition(x + 1, y, x, y);
                     if (y > 0)//Check up
                         if (tilesBoard[x][y - 1].getText().equals(""))
                             changeTilesPosition(x, y - 1, x, y);
-                    if (y < size - 1)//Check down
+                    if (y < sizeY - 1)//Check down
                         if (tilesBoard[x][y + 1].getText().equals(""))
                             changeTilesPosition(x, y + 1, x, y);
                 }
@@ -160,6 +164,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
+
         new Puzzle15();
     }
 }

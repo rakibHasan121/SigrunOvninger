@@ -35,6 +35,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
         initComponent();
     }
 
+
     private void initComponent() {
         int maxBrickor = (size * size) - 1;
         int count = 1;//As the text in the tiles starts from 1
@@ -158,9 +159,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
         }
     }
 
-
     public static void main(String[] args) {
-
         new Puzzle15();
     }
 }

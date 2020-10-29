@@ -23,7 +23,7 @@ public class Puzzle15 extends JFrame implements ActionListener {
     private final JButton exit = new JButton("Exit");
 
     private final int sizeX = Integer.parseInt(JOptionPane.showInputDialog("Number of rows and column"));//Number of rows from user input
-    private final int sizeY = Integer.parseInt(JOptionPane.showInputDialog("Number of columns (minimum 3)"));//Number of columns from user input
+    private final int sizeY = sizeX;//Number of columns from user input
 
     private final JButton[][] tilesBoard = new JButton[sizeX][sizeY];
 

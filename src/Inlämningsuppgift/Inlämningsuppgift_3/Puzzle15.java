@@ -18,9 +18,9 @@ public class Puzzle15 extends JFrame implements ActionListener {
     private final JPanel southButtons = new JPanel();
     private final JPanel tileButtons = new JPanel();
 
-    private final JButton newGame = new JButton("Nytt Spel");
-    private final JButton cheat = new JButton("CheatCode");
-    private final JButton exit = new JButton("Avsluta");
+    private final JButton newGame = new JButton("New Game");
+    private final JButton cheat = new JButton("Cheat");
+    private final JButton exit = new JButton("Exit");
 
     private final int sizeX = Integer.parseInt(JOptionPane.showInputDialog("Number of rows"));//Number of rows from user input
     private final int sizeY = Integer.parseInt(JOptionPane.showInputDialog("Number of columns"));//Number of columns from user input

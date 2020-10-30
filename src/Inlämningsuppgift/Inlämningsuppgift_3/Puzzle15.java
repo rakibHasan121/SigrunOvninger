@@ -151,7 +151,8 @@ public class Puzzle15 extends JFrame implements ActionListener {
         }
 
         if (onWinning())
-            if (JOptionPane.showConfirmDialog(null, "You win this round. Try again! ", "Congratulation", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
+            if (JOptionPane.showConfirmDialog(null, "You win this round. Try again! ",
+                    "Congratulation", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION)
                 mixTiles(tilesBoard);
             else
                 System.exit(0);

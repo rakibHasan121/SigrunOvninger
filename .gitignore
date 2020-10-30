@@ -7,5 +7,5 @@
 *.iml
 *.ser
 *.xml
-
+*.DS_Store
 

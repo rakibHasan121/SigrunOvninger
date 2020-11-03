@@ -18,12 +18,14 @@ class InetAddressDemo {
         //IP till dn.se
         Address = InetAddress.getByName("dn.se");
         System.out.println(Address);
+        Address = InetAddress.getByName("0.0.0.0");
+        System.out.println(Address.getHostName());
 
         //Ett datornamn kan ha flera IP
-        InetAddress SW[] = InetAddress.getAllByName("www.hm.se");
+        InetAddress SW[] = InetAddress.getAllByName("hm.se");
 
-        for (int i = 0; i < SW.length; i++) {
-            System.out.println(SW[i]);
+        for (InetAddress inetAddress : SW) {
+            System.out.println(inetAddress.getHostAddress());
         }
     }
 }

@@ -53,22 +53,24 @@ public class HealtyPets {
         djurList.add(new Katt("Venus", 5_000));
         djurList.add(new Katt("Ove", 3_000));
         djurList.add(new Orm("Hypno", 1_000));
-
-        String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?");
-        if (input == null || input.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Uttrycket får inte vara tomt");
-            System.exit(0);
-        }
-        boolean isFound = false;
-        for (Djur djur : djurList) {
-            if (djur.getDjurNamn().equalsIgnoreCase(input.trim())) {
-                JOptionPane.showMessageDialog(null, djur.getDjurNamn() + " ska få " + String.format("%.1f", djur.räknaPortioner()) + " gm av " + djur.djurenMatTyp().toString().toLowerCase());
-                isFound = true;
-                break;
+        while (true) {
+            String input = JOptionPane.showInputDialog(null, "Vilket djur ska få mat?");
+            if (input == null || input.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Uttrycket får inte vara tomt");
+                System.exit(0);
             }
+            boolean isFound = false;
+            for (Djur djur : djurList) {
+                if (djur.getDjurNamn().equalsIgnoreCase(input.trim())) {
+                    JOptionPane.showMessageDialog(null, djur.getDjurNamn() + " ska få " + String.format("%.1f", djur.räknaPortioner()) + " gm av " + djur.djurenMatTyp().toString().toLowerCase());
+                    isFound = true;
+                    break;
+                }
+            }
+            if (!isFound)
+                JOptionPane.showMessageDialog(null, "Matat in felaktiga värden");
         }
-        if (!isFound)
-            JOptionPane.showMessageDialog(null, "Matat in felaktiga värden");
+
     }
 
     public static void main(String[] args) {

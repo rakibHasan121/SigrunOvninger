@@ -74,6 +74,6 @@ public class HealtyPets {
     }
 
     public static void main(String[] args) {
-        HealtyPets hp = new HealtyPets();
+        new HealtyPets();
     }
 }

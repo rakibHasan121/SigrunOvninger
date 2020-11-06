@@ -12,11 +12,11 @@ import java.util.List;
  */
 
 public class HealtyPets {
-    public HealtyPets() {
-        /*
-        //Det hur jag gjort
 
-        //Här lagrar djuren till listor så i framtiden man kan lagra ny djuren
+    public HealtyPets() {
+
+        /*
+        //This is how i did. Hardcoded it, which is not a good practice
         List<Katt> katt = new ArrayList<>();
         katt.add(0, new Katt("Venus", 5_000));
         katt.add(1, new Katt("Ove", 3_000));

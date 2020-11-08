@@ -18,14 +18,15 @@ class InetAddressDemo {
         //IP till dn.se
         Address = InetAddress.getByName("dn.se");
         System.out.println(Address);
-        Address = InetAddress.getByName("0.0.0.0");
-        System.out.println(Address.getHostName());
 
         //Ett datornamn kan ha flera IP
         InetAddress SW[] = InetAddress.getAllByName("hm.se");
 
-        for (InetAddress inetAddress : SW) {
+        for (int i = 0, swLength = SW.length; i < swLength; i++) {
+            InetAddress inetAddress = SW[i];
             System.out.println(inetAddress.getHostAddress());
+            System.out.println(inetAddress.getHostName());
+            System.out.println("Is Multicast? "+inetAddress.isMulticastAddress());
         }
     }
 }

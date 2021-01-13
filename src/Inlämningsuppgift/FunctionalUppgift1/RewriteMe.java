@@ -56,16 +56,14 @@ public class RewriteMe {
     //Skapa en Map där kategorierna är nycklar och värdena är en lista
     //av de frågesträngar som tillhör varje kategori
     public Map<Category, List<String>> getQuestionGroupedByCategory() {
-        Map<Category, List<String>> questionMappedByCategory = questions.stream().collect(groupingBy(Question::getCategory, mapping(
-                q -> {
-                    if (q.getCategory().equals(Category.FOOD))
-                        return q.getQuestionString();
-                    else if (q.getCategory().equals(Category.CHEMISTRY))
-                        return q.getQuestionString();
-                    else
-                        return q.getQuestionString();
-                },
-                toList())));
+        Map<Category, List<String>> questionMappedByCategory = questions.stream().collect(groupingBy(Question::getCategory, mapping(q -> {
+            if (q.getCategory().equals(Category.FOOD))
+                return q.getQuestionString();
+            else if (q.getCategory().equals(Category.CHEMISTRY))
+                return q.getQuestionString();
+            else
+                return q.getQuestionString();
+        }, toList())));
         return questionMappedByCategory;
     }
 
